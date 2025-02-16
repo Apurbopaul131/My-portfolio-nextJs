@@ -1,10 +1,14 @@
-export type Project = {
-  id: number;
+export type TProject = {
+  _id: string;
   title: string;
   year: string;
   category: string;
   description: string;
   image: string;
+  liveLink: string;
+  repoLink: string;
+  technologies: string;
+  author: string;
 };
 export type Blog = {
   id: string;

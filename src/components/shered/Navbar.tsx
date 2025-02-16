@@ -1,5 +1,6 @@
 "use client";
 import { Menu, X } from "lucide-react";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -16,16 +17,28 @@ const navItems = [
     name: "Blogs",
     path: "/blogs",
   },
-  {
-    name: "Login",
-    path: "/login",
-  },
+  ,
   {
     name: "Contact Us",
     path: "/contact",
   },
+  {
+    name: "Dashboard",
+    path: "/dashboard",
+  },
+  {
+    name: "Login",
+    path: "/login",
+  },
 ];
-const Navbar = () => {
+export type TSessionProps = {
+  user?: {
+    name?: string | null;
+    email?: string | null;
+    image?: string | null;
+  };
+};
+const Navbar = ({ session }: { session: TSessionProps | null }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="bg-white fixed top-0 left-0 w-full z-50">
@@ -41,13 +54,54 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-gray-800 font-medium">
-          {navItems.map(({ name, path }, index) => (
+          {/* {navItems.map((items, index) => (
             <li key={index}>
-              <Link href={`${path}`} className="hover:text-blue-600">
-                {name}
+              <Link href={`${items?.path}`} className="hover:text-blue-600">
+                {items?.name}
               </Link>
             </li>
-          ))}
+          ))} */}
+          <li>
+            <Link href="/" className="hover:text-blue-600">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/projects" className="hover:text-blue-600">
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link href="/blogs" className="hover:text-blue-600">
+              Blogs
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact" className="hover:text-blue-600">
+              Contact Us
+            </Link>
+          </li>
+          <li>
+            <Link href="/dashboard" className="hover:text-blue-600">
+              Dashboard
+            </Link>
+          </li>
+          {session?.user ? (
+            <li>
+              <span
+                onClick={() => signOut()}
+                className="hover:text-blue-600 cursor-pointer"
+              >
+                Logout
+              </span>
+            </li>
+          ) : (
+            <li>
+              <Link href="/login" className="hover:text-blue-600">
+                Login
+              </Link>
+            </li>
+          )}
         </ul>
 
         {/* Download CV Button */}
@@ -71,10 +125,10 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-md">
           <ul className="flex flex-col text-center text-gray-800">
-            {navItems.map(({ name, path }, index) => (
+            {navItems.map((items, index) => (
               <li key={index}>
-                <Link href={`${path}`} className="hover:text-blue-600">
-                  {name}
+                <Link href={`${items?.path}`} className="hover:text-blue-600">
+                  {items?.name}
                 </Link>
               </li>
             ))}
