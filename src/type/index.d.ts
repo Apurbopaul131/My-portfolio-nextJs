@@ -10,12 +10,12 @@ export type TProject = {
   technologies: string;
   author: string;
 };
-export type Blog = {
-  id: string;
+export type TBlog = {
+  _id: string;
+  author: string;
+  category: string;
+  content: string;
+  image: string;
+  publish_date: string; // ISO 8601 formatted date string
   title: string;
-  description: string;
-  publish_date: string;
-  author_name: string;
-  blog_image: string;
-  total_likes: string;
 };

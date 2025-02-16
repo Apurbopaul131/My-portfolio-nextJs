@@ -1,4 +1,9 @@
-// components/BlogForm.js
+/* eslint-disable @typescript-eslint/no-unused-vars */
+"use client";
+
+import { createBlog } from "@/actions/createBlog";
+import { startTransition } from "react";
+import { toast } from "sonner";
 
 const categories = [
   "Web Development",
@@ -14,9 +19,30 @@ const categories = [
 ];
 
 const BlogForm = () => {
+  const onCreateBlogSubmit = (formData: FormData) => {
+    startTransition(async () => {
+      try {
+        const result = await createBlog(formData);
+        console.log(result);
+        toast.success("Blog created successfully.", {
+          style: {
+            color: "green",
+          },
+          position: "top-right",
+        });
+      } catch (error) {
+        toast.error("Blog Created failed..", {
+          style: {
+            color: "red",
+          },
+          position: "top-right",
+        });
+      }
+    });
+  };
   return (
     <div className="max-w-4xl mx-auto p-6 bg-gray-100">
-      <form className="space-y-6">
+      <form action={onCreateBlogSubmit} className="space-y-6">
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Title
@@ -38,18 +64,6 @@ const BlogForm = () => {
             required
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
           ></textarea>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Author
-          </label>
-          <input
-            type="text"
-            name="author"
-            required
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-          />
         </div>
 
         <div>

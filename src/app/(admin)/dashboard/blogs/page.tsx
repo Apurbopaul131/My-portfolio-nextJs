@@ -1,7 +1,9 @@
+import BlogTableContainer from "@/components/ui/BlogTableContainer";
+
 const BlogsPage = () => {
   return (
     <div>
-      <h1>This is blogs page</h1>
+      <BlogTableContainer />
     </div>
   );
 };
