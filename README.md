@@ -63,4 +63,4 @@ npm run dev
 
 ### Frontend live link: https://my-portfolio-nextjs-azure.vercel.app
 
-Go to stationary-shop backend source code using [PAPERCARD-BACKEND](https://github.com/Apurbopaul131/my-portfolio-nextJs-server.git).
+Go to stationary-shop backend source code using [MYNEXTJSPORTFOLIO-BACKEND](https://github.com/Apurbopaul131/my-portfolio-nextJs-server.git).
