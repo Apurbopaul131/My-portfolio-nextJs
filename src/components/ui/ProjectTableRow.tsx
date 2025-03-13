@@ -83,7 +83,7 @@ const ProjectTableRow = ({
               ? onDeleteProjectSubmit(project?._id as string)
               : onDeleteBlogSubmit(blog?._id as string)
           }
-          className="p-2 md:px-4 md:py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+          className="p-2 md:px-4 md:py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600"
         >
           Delete
         </button>

@@ -13,7 +13,6 @@ export const deleteBlog = async (BlogId: string) => {
     }
   );
   const data = await res.json();
-  console.log(data);
   if (data) {
     revalidatePath("/(admin)/dashboard", "layout");
   }

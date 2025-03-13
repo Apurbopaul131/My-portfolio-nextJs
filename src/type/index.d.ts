@@ -18,4 +18,6 @@ export type TBlog = {
   image: string;
   publish_date: string; // ISO 8601 formatted date string
   title: string;
+  blog_writter: string;
+  total_likes: string;
 };

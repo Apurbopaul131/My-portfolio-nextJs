@@ -133,7 +133,7 @@ const ProjectForm = ({ project }: { project: TProject | null }) => {
         />
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
         >
           {project?._id ? "Update" : "Submit"}
         </button>

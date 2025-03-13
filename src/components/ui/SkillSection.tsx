@@ -50,8 +50,8 @@ const SkillSection = () => {
   return (
     <div className="py-12 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
       <h2 className="text-3xl font-bold text-center mb-8">My Skills</h2>
-      <div className="container mx-auto p-4 grid md:grid-cols-3 gap-6">
-        { Object.entries(skills).map(([category, items]) => (
+      <div className="container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Object.entries(skills).map(([category, items]) => (
           <div
             key={category}
             className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"

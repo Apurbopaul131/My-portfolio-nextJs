@@ -1,37 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Apurbo's Portfolio
 
-## Getting Started
+### 1.Project Name: Apurbo's Portfolio
 
-First, run the development server:
+### 2. Project Title: This is developer portfolio website that showcase developer work.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 3. Key Features:
+
+- User can login into website using Google and Github.
+- User can post his project with some information.
+- User can update and delete his project
+- User can post his blog with some information.
+- User can update and delete his blog.
+- User can show project and blog details
+
+### 4. Frontend Technology Used:
+
+- React
+- NextJs
+- Tailwind css
+
+### 5. Backend Technology Used:
+
+- Typescript
+- Express Js
+- Mongoose
+- MongoDB
+
+## How to locally run the Frontend:
+
+### 1. Clone the Repository
+
+Run the following command in your terminal to clone the repository:
+
+```javascript
+git clone https://github.com/Apurbopaul131/My-portfolio-nextJs.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Navigate to the Project Directory
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run the following command to by adding expected directory name:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```javascript
+cd your-repo-name
+```
 
-## Learn More
+### 3. Install Dependencies
 
-To learn more about Next.js, take a look at the following resources:
+Install the required dependencies using npm or yarn:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```javascript
+npm install
+// or
+yarn install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 7. Run the Project
 
-## Deploy on Vercel
+```javascript
+//development mode
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Frontend live link: https://my-portfolio-nextjs-azure.vercel.app
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# My-portfolio-nextJs" 
+Go to stationary-shop backend source code using [PAPERCARD-BACKEND](https://github.com/Apurbopaul131/my-portfolio-nextJs-server.git).

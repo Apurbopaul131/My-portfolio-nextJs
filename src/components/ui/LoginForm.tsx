@@ -4,7 +4,7 @@ import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 const LoginForm = () => {
   return (
-    <div className="w-80 mx-auto h-auto bg-white shadow-sm rounded-lg p-6">
+    <div className="w-[80%] sm:w-[60%] md:w-[40%] lg:w-[30%] mx-auto h-auto bg-white shadow-sm rounded-lg p-6">
       <p className="text-center font-bold text-2xl mb-6">Login</p>
       <form className="flex flex-col gap-4 mb-4">
         <input
@@ -34,7 +34,8 @@ const LoginForm = () => {
         <button
           onClick={() =>
             signIn("github", {
-              callbackUrl: "http://localhost:3000/dashboard",
+              callbackUrl:
+                "https://my-portfolio-nextjs-azure.vercel.app/dashboard",
             })
           }
           className="flex items-center justify-center p-3 border border-gray-500 rounded-lg shadow-md cursor-pointer hover:bg-gray-100"
@@ -45,7 +46,8 @@ const LoginForm = () => {
         <button
           onClick={() =>
             signIn("google", {
-              callbackUrl: "http://localhost:3000/dashboard",
+              callbackUrl:
+                "https://my-portfolio-nextjs-azure.vercel.app/dashboard",
             })
           }
           className="flex items-center justify-center p-3 border border-gray-500 rounded-lg shadow-md cursor-pointer hover:bg-gray-100"

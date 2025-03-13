@@ -3,9 +3,8 @@
 import MessageCard from "./MessageCard";
 
 export default async function MessageCardContainer() {
-  const res = await fetch("http://localhost:5000/api/dashboard/messages");
+  const res = await fetch(`${process.env.PROJECT_URL}/api/dashboard/messages`);
   const messages = await res.json();
-  console.log(messages?.data);
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">

@@ -1,17 +1,17 @@
 "use client";
-import { Blog } from "@/type";
+import { TBlog } from "@/type";
 import Image from "next/image";
 import Link from "next/link";
 
 import { AiFillLike } from "react-icons/ai";
 import { FaCalendar } from "react-icons/fa";
 
-const BlogCard = ({ blog }: { blog: Blog }) => {
+const BlogCard = ({ blog }: { blog: TBlog }) => {
   return (
     <div className="w-full bg-white shadow-md rounded-lg overflow-hidden">
       <figure>
         <Image
-          src={blog.blog_image}
+          src={blog?.image || ""}
           width={600}
           height={100}
           alt="blog image"
@@ -19,20 +19,29 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
         />
       </figure>
       <div className="p-6">
-        <p className="flex items-center justify-center text-teal-600 bg-teal-100 w-32 rounded-full py-1 text-sm">
-          <FaCalendar className="mr-2" />
-          {blog.publish_date}
-        </p>
+        <div className="flex justify-between">
+          <p className="flex items-center justify-center text-blue-600 bg-blue-100 w-32 rounded-full py-1 text-sm">
+            <FaCalendar className="mr-2" />
+            {blog?.publish_date.split("T")[0]}
+          </p>
+          <div>
+            <Link href={`/blog/${blog?._id}`}>
+              <button className="bg-orange-500 text-white px-4 py-2 rounded-full  hover:hover:bg-orange-600">
+                View Details
+              </button>
+            </Link>
+          </div>
+        </div>
         <h2 className="text-xl font-bold mt-4">
           {blog.title.length > 30
             ? blog.title.slice(0, 30) + "..."
             : blog.title}
         </h2>
         <p className="text-gray-400 mt-2">
-          {blog.description.length > 100
-            ? blog.description.slice(0, 60) + "..."
-            : blog.description}
-          <Link href={`/blogs/${blog.id}`} className="text-teal-600 ml-1">
+          {blog?.content?.length > 100
+            ? blog?.content.slice(0, 60) + "..."
+            : blog?.content}
+          <Link href={`/blog/${blog?._id}`} className="text-blue-600 ml-1">
             Read More
           </Link>
         </p>
@@ -48,12 +57,12 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
               />
             </div>
             <span className="text-sm font-medium text-gray-500">
-              {blog.author_name}
+              {blog?.blog_writter}
             </span>
           </div>
           <div className="flex items-center text-sm text-gray-700">
-            <AiFillLike className="text-teal-600 text-xl mr-1" />
-            {blog.total_likes} Likes
+            <AiFillLike className="text-blue-600 text-xl mr-1" />
+            {blog?.total_likes} Likes
           </div>
         </div>
       </div>
