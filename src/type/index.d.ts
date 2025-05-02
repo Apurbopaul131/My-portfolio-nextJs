@@ -4,6 +4,8 @@ export type TProject = {
   year: string;
   category: string;
   description: string;
+  challenges: string;
+  futureScope: string;
   image: string;
   liveLink: string;
   repoLink: string;

@@ -18,31 +18,92 @@ import {
 
 const skills = {
   frontend: [
-    { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
-    { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-teal-500" /> },
-    { name: "Bootstrap", icon: <SiBootstrap className="text-purple-500" /> },
-    { name: "DaisyUI", icon: <SiDaisyui className="text-green-500" /> },
-    { name: "Ant Design", icon: <SiAntdesign className="text-red-500" /> },
-    { name: "JavaScript", icon: <SiJavascript className="text-yellow-500" /> },
-    { name: "React", icon: <FaReact className="text-blue-400" /> },
-    { name: "React Router", icon: <SiReact className="text-red-400" /> },
-    { name: "Redux", icon: <SiRedux className="text-purple-600" /> },
-    { name: "TypeScript", icon: <SiTypescript className="text-blue-600" /> },
+    {
+      name: "HTML",
+      icon: <FaHtml5 className="text-orange-500" />,
+      projects: 5,
+    },
+    { name: "CSS", icon: <FaCss3Alt className="text-blue-500" />, projects: 5 },
+    {
+      name: "Tailwind CSS",
+      icon: <SiTailwindcss className="text-teal-500" />,
+      projects: 4,
+    },
+    {
+      name: "Bootstrap",
+      icon: <SiBootstrap className="text-purple-500" />,
+      projects: 2,
+    },
+    {
+      name: "DaisyUI",
+      icon: <SiDaisyui className="text-green-500" />,
+      projects: 3,
+    },
+    {
+      name: "Ant Design",
+      icon: <SiAntdesign className="text-red-500" />,
+      projects: 2,
+    },
+    {
+      name: "JavaScript",
+      icon: <SiJavascript className="text-yellow-500" />,
+      projects: 6,
+    },
+    { name: "React", icon: <FaReact className="text-blue-400" />, projects: 6 },
+    {
+      name: "React Router",
+      icon: <SiReact className="text-red-400" />,
+      projects: 5,
+    },
+    {
+      name: "Redux",
+      icon: <SiRedux className="text-purple-600" />,
+      projects: 3,
+    },
+    {
+      name: "TypeScript",
+      icon: <SiTypescript className="text-blue-600" />,
+      projects: 2,
+    },
     {
       name: "Next.js",
       icon: <SiNextdotjs className="text-black dark:text-white" />,
+      projects: 2,
     },
   ],
   backend: [
-    { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
-    { name: "Express.js", icon: <SiExpress className="text-gray-500" /> },
-    { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
-    { name: "Mongoose", icon: <SiMongoose className="text-red-600" /> },
+    {
+      name: "Node.js",
+      icon: <FaNodeJs className="text-green-500" />,
+      projects: 5,
+    },
+    {
+      name: "Express.js",
+      icon: <SiExpress className="text-gray-500" />,
+      projects: 5,
+    },
+    {
+      name: "MongoDB",
+      icon: <SiMongodb className="text-green-600" />,
+      projects: 5,
+    },
+    {
+      name: "Mongoose",
+      icon: <SiMongoose className="text-red-600" />,
+      projects: 4,
+    },
   ],
   tools: [
-    { name: "Firebase", icon: <SiFirebase className="text-yellow-500" /> },
-    { name: "Payment System", icon: <SiStripe className="text-indigo-500" /> },
+    {
+      name: "Firebase",
+      icon: <SiFirebase className="text-yellow-500" />,
+      projects: 3,
+    },
+    {
+      name: "Payment System",
+      icon: <SiStripe className="text-indigo-500" />,
+      projects: 2,
+    },
   ],
 };
 
@@ -62,7 +123,18 @@ const SkillSection = () => {
             <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
               {items.map((skill) => (
                 <div key={skill.name} className="flex flex-col items-center">
-                  <div className="text-4xl">{skill.icon}</div>
+                  <div className="relative group inline-block">
+                    <div className="text-4xl">{skill.icon}</div>
+
+                    <div
+                      className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 
+              hidden group-hover:block
+              bg-gray-800 text-white text-sm px-3 py-1 rounded 
+              whitespace-nowrap z-10 shadow-lg"
+                    >
+                      {skill.projects}+ projects
+                    </div>
+                  </div>
                   <p className="text-sm mt-2">{skill.name}</p>
                 </div>
               ))}

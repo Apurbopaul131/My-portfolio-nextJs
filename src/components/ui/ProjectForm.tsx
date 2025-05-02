@@ -99,6 +99,21 @@ const ProjectForm = ({ project }: { project: TProject | null }) => {
           required
           className="w-full p-2 border rounded"
         ></textarea>
+        <textarea
+          name="challenges"
+          placeholder="Challenges Faced"
+          defaultValue={project?.challenges || ""}
+          required
+          className="w-full p-2 border rounded"
+        ></textarea>
+        <textarea
+          name="futureScope"
+          placeholder="Future Scope"
+          defaultValue={project?.futureScope || ""}
+          required
+          className="w-full p-2 border rounded"
+        ></textarea>
+
         <input
           type="text"
           name="image"

@@ -1,6 +1,6 @@
 "use client";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -42,6 +42,7 @@ export type TSessionProps = {
 const Navbar = ({ session }: { session: TSessionProps | null }) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  console.log(session);
 
   return (
     <nav className="bg-white fixed top-0 left-0 w-full z-50">
@@ -97,7 +98,7 @@ const Navbar = ({ session }: { session: TSessionProps | null }) => {
               Contact Us
             </Link>
           </li>
-          {session?.user && (
+          {/* {session?.user && (
             <li>
               <Link
                 href="/dashboard"
@@ -124,15 +125,19 @@ const Navbar = ({ session }: { session: TSessionProps | null }) => {
                 Login
               </Link>
             </li>
-          )}
+          )} */}
         </ul>
 
         {/* Download CV Button */}
         <a href="/Apurbo-paul-cv.pdf" download="Apurbo-paul-cv.pdf">
-          <button className="hidden md:block bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition">
+          <motion.button
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="hidden md:block bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition"
+          >
             {" "}
             Download CV
-          </button>
+          </motion.button>
         </a>
 
         {/* Mobile Menu Button */}
@@ -200,7 +205,7 @@ const Navbar = ({ session }: { session: TSessionProps | null }) => {
                 Contact Us
               </Link>
             </li>
-            {session?.user && (
+            {/* {session?.user && (
               <li>
                 <Link
                   href="/dashboard"
@@ -229,7 +234,7 @@ const Navbar = ({ session }: { session: TSessionProps | null }) => {
                   Login
                 </Link>
               </li>
-            )}
+            )} */}
           </ul>
 
           <a href="/Apurbo-paul-cv.pdf" download="Apurbo-paul-cv.pdf">

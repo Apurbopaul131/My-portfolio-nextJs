@@ -26,7 +26,15 @@ const ProjectDetailsCard = ({ project }: { project: TProject }) => {
         <p className="text-sm text-gray-500">
           {project.category} | {project.year}
         </p>
-        <p className="text-gray-700 mt-3">{project.description}</p>
+        <p className="text-gray-700 mt-3">
+          <span className="font-bold">Description:</span> {project.description}
+        </p>
+        <p className="text-gray-700 mt-3">
+          <span className="font-bold">Future Work:</span> {project.futureScope}
+        </p>
+        <p className="text-gray-700 mt-3">
+          <span className="font-bold">Challenges</span> {project.challenges}
+        </p>
 
         <div className="mt-4 flex flex-wrap gap-2">
           <p className="bg-blue-100 text-blue-600 px-3 py-1 text-sm rounded-lg">
