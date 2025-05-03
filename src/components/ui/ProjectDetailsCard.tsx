@@ -42,7 +42,7 @@ const ProjectDetailsCard = ({ project }: { project: TProject }) => {
           </p>
         </div>
 
-        <div className="mt-5 flex items-center justify-between">
+        <div className="mt-5 flex flex-col md:flex-row gap-2 items-center justify-between">
           <p className="text-sm text-gray-500">By {project.author}</p>
           <div className="flex gap-3">
             <motion.a

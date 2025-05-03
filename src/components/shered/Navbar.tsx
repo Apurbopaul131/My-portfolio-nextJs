@@ -151,8 +151,8 @@ const Navbar = ({ session }: { session: TSessionProps | null }) => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-md">
-          <ul className="flex flex-col text-center text-gray-800">
+        <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-md pb-3">
+          <ul className="text-center text-gray-800">
             {/* {navItems.map((items, index) => (
               <li key={index}>
                 <Link
@@ -238,7 +238,7 @@ const Navbar = ({ session }: { session: TSessionProps | null }) => {
           </ul>
 
           <a href="/Apurbo-paul-cv.pdf" download="Apurbo-paul-cv.pdf">
-            <button className="block w-[30%] mx-auto text-center bg-orange-500 text-white p-3 rounded-md mt-2 hover:bg-orange-600 transition">
+            <button className="block w-[40%] mx-auto text-center bg-orange-500 text-white px-2 py-2 rounded-md mt-2 hover:bg-orange-600 transition">
               {" "}
               Download CV
             </button>
