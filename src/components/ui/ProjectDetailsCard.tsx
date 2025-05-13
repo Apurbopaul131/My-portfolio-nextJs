@@ -6,6 +6,7 @@ import Image from "next/image";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const ProjectDetailsCard = ({ project }: { project: TProject }) => {
+  console.log(project.features.split("#"));
   return (
     <motion.div
       className="container bg-white mx-auto py-6 md:py-8"
@@ -28,21 +29,34 @@ const ProjectDetailsCard = ({ project }: { project: TProject }) => {
             {project.category} | {project.year}
           </p>
           <p className="text-gray-700 mt-3">
-            <span className="font-bold">Description:</span>{" "}
-            {project.description}
+            <span className="font-bold">Overview:</span> {project.description}
           </p>
+          <div className="mt-3">
+            <p className="text-gray-700 font-bold">Features:</p>
+            <ul className="list-disc pl-5 space-y-2 text-gray-800 text-base">
+              {project.features.split("#").map((feature, idx) => (
+                <li key={idx}>{feature}</li>
+              ))}
+            </ul>
+          </div>
           <p className="text-gray-700 mt-3">
             <span className="font-bold">Future Work:</span>{" "}
             {project.futureScope}
           </p>
           <p className="text-gray-700 mt-3">
-            <span className="font-bold">Challenges</span> {project.challenges}
+            <span className="font-bold">Challenges:</span> {project.challenges}
           </p>
 
-          <div className="mt-4 flex flex-wrap gap-2">
-            <p className="bg-blue-100 text-blue-600 px-3 py-1 text-sm rounded-lg">
-              {project.technologies}
-            </p>
+          <div className="flex flex-wrap gap-3 mt-3 items-center">
+            <p className="font-bold">Technology Used:</p>
+            {project.technologies?.split(",").map((tech, idx) => (
+              <div
+                key={idx}
+                className="px-2 py-1 text-center text-black border-2 rounded-md border-blue-500"
+              >
+                {tech}
+              </div>
+            ))}
           </div>
 
           <div className="mt-5 flex flex-col md:flex-row gap-2 items-center justify-between">
@@ -52,7 +66,7 @@ const ProjectDetailsCard = ({ project }: { project: TProject }) => {
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 bg-green-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600"
+                className="flex items-center gap-1 bg-blue-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-600"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -62,7 +76,7 @@ const ProjectDetailsCard = ({ project }: { project: TProject }) => {
                 href={project.repoLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 bg-gray-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-900"
+                className="flex items-center gap-1 bg-orange-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-600"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

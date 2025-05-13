@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ProjectCardMotion = ({ project }: { project: TProject }) => {
+  console.log(project.technologies.split(","));
+
   return (
     <motion.div
       className="bg-white rounded-2xl shadow-lg p-5 overflow-hidden transition-all flex flex-col"
@@ -27,7 +29,7 @@ const ProjectCardMotion = ({ project }: { project: TProject }) => {
             ? project.title.slice(0, 30) + "..."
             : project.title}
         </h3>
-        <p className="text-gray-600 text-sm mt-2 line-clamp-3">
+        <p className="text-gray-600 text-sm mt-2 line-clamp-3 min-h-16">
           {project.description.length > 100
             ? project.description.slice(0, 100) + "..."
             : project.description}
@@ -38,12 +40,29 @@ const ProjectCardMotion = ({ project }: { project: TProject }) => {
             Read More
           </Link>
         </p>
-
-        <div className="flex justify-between items-center mt-auto">
+        <div className="flex flex-wrap gap-3">
+          {project.technologies
+            ?.split(",")
+            .slice(0, 2)
+            .map((tech, idx) => (
+              <div
+                key={idx}
+                className="px-2 py-1 text-center text-black border-2 rounded-md border-blue-500"
+              >
+                {tech}
+              </div>
+            ))}
+          <Link href={`/projects/${project._id}`}>
+            <div className="px-2 py-1 text-center text-black border-2 rounded-md border-blue-500">
+              +{project.technologies.split(",").length - 2} More
+            </div>
+          </Link>
+        </div>
+        <div className="flex justify-between items-center mt-5">
           <span className="text-sm text-gray-400">{project?.year}</span>
           <Link href={`/projects/${project._id}`}>
             <motion.button
-              className="bg-orange-500 text-white px-4 py-2 rounded-full  hover:hover:bg-orange-600"
+              className="bg-orange-500 text-white px-2 py-1 rounded-md  hover:hover:bg-orange-600"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
