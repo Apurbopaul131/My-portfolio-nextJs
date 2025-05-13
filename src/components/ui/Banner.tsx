@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center gap-12 p-6 md:p-12 bg-white">
+    <section className="container mx-auto px-4 py-12 flex flex-col md:flex-row items-center justify-between gap-12 bg-white">
       {/* Left Side - Text Content */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -24,13 +24,15 @@ const Banner = () => {
           in Computer Science and Engineering from Green University of
           Bangladesh.
         </p>
-        <motion.button
-          whileHover={{ scale: 1.05, y: -2 }}
-          whileTap={{ scale: 0.95 }}
-          className="mt-3 bg-orange-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-600 transition"
-        >
-          Hire Me
-        </motion.button>
+        <a href="/Apurbo-paul-cv.pdf" download="Apurbo-paul-cv.pdf">
+          <motion.button
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-3 bg-orange-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-orange-600 transition"
+          >
+            Hire Me
+          </motion.button>
+        </a>
       </motion.div>
 
       {/* Right Side - Image */}

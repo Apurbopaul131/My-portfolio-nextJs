@@ -12,7 +12,7 @@ const BlogsPage = async () => {
   });
   const { data: blogs } = await res.json();
   return (
-    <div className="w-[90%] mx-auto">
+    <div className="container mx-auto px-4">
       <h1 className="text-center text-3xl font-bold my-8">All Blogs</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {(blogs as TBlog[])?.map((blog, index) => (

@@ -48,7 +48,7 @@ const AboutMe = () => {
         About Me
       </motion.h2>
 
-      <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-12 mt-6">
+      <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-12 mt-6">
         <motion.div className="max-w-lg space-y-2" variants={itemVariants}>
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-bold text-blue-500">2020–2024</h3>

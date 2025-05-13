@@ -46,12 +46,12 @@ const Navbar = ({ session }: { session: TSessionProps | null }) => {
 
   return (
     <nav className="bg-white fixed top-0 left-0 w-full z-50">
-      <div className="container mx-auto flex items-center justify-between p-4">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="text-xl font-bold">
           <Link href="/">
             <div className="flex items-center cursor-pointer">
-              <span className="ml-2">Apurbo</span>
+              <span className="">Apurbo</span>
             </div>
           </Link>
         </div>
@@ -237,12 +237,12 @@ const Navbar = ({ session }: { session: TSessionProps | null }) => {
             )} */}
           </ul>
 
-          <a href="/Apurbo-paul-cv.pdf" download="Apurbo-paul-cv.pdf">
-            <button className="block w-[40%] mx-auto text-center bg-orange-500 text-white px-2 py-2 rounded-md mt-2 hover:bg-orange-600 transition">
+          {/* <a href="/Apurbo-paul-cv.pdf" download="Apurbo-paul-cv.pdf">
+            <button className="block w-[30%] mx-auto text-center bg-orange-500 text-white py-2 rounded-md mt-2 hover:bg-orange-600 transition">
               {" "}
               Download CV
             </button>
-          </a>
+          </a> */}
         </div>
       )}
     </nav>

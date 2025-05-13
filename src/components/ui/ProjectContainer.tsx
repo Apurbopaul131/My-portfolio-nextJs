@@ -42,7 +42,7 @@ const ProjectContainer = async () => {
   });
   const { data: projects } = await res.json();
   return (
-    <div className="container mx-auto p-4 py-12 dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div className="container mx-auto px-4 py-12 dark:bg-gray-900 text-gray-900 dark:text-white">
       <h2 className="text-3xl font-bold text-center mb-8">Featured Works</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {(projects as TProject[])?.slice(0, 3).map((project, index) => (
