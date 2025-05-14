@@ -50,7 +50,7 @@ const ContactForm = () => {
 
   return (
     <motion.div
-      className="min-h-screen bg-gray-100 grid items-center"
+      className="min-h-screen grid items-center"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}

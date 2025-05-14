@@ -52,7 +52,7 @@ const AboutMe = () => {
         <motion.div className="max-w-lg space-y-2" variants={itemVariants}>
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-bold text-blue-500">2020–2024</h3>
-            <h3 className="text-lg font-bold">BSc in CSE</h3>
+            <h3 className="text-lg font-bold text-blue-500">BSc in CSE</h3>
           </div>
           <p>3.33 out of 4.00</p>
           <p>

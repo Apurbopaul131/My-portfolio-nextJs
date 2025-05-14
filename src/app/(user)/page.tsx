@@ -1,14 +1,14 @@
 import AboutMe from "@/components/ui/AboutMe";
-import Banner from "@/components/ui/Banner";
+import BannerSection from "@/components/ui/BannerSection";
+
 import BlogsContainer from "@/components/ui/BlogsContainer";
+
 import ProjectContainer from "@/components/ui/ProjectContainer";
-import SkillSection from "@/components/ui/SkillSection";
 
 const HomePage = () => {
   return (
     <div>
-      <Banner />
-      <SkillSection />
+      <BannerSection />
       <AboutMe />
       <ProjectContainer />
       <BlogsContainer />

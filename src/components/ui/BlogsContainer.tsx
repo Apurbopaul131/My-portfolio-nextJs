@@ -65,7 +65,7 @@ const BlogsContainer = async () => {
   const blogs = await res.json();
 
   return (
-    <div className="py-12 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div className="text-gray-900 dark:text-white">
       <h2 className="text-3xl font-bold text-center mb-8">My Blogs</h2>
       <div className="container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogs?.data.length &&
@@ -73,9 +73,9 @@ const BlogsContainer = async () => {
             .slice(0, 3)
             .map((blog: TBlog) => <BlogCard key={blog?._id} blog={blog} />)}
       </div>
-      <div className="my-3 flex justify-center">
+      <div className="mt-3 flex justify-center">
         <Link href={"/blog"}>
-          <button className="bg-orange-500 flex gap-1 items-center text-white px-3 py-2 rounded-md hover:bg-orange-600 transition">
+          <button className="bg-orange-500 flex gap-1 items-center text-white px-4 py-2 rounded-full hover:bg-orange-600 transition">
             <span>See more</span>
             <FaArrowRight />
           </button>

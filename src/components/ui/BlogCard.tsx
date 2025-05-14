@@ -9,7 +9,7 @@ import { FaCalendar } from "react-icons/fa";
 const BlogCard = ({ blog }: { blog: TBlog }) => {
   return (
     <motion.div
-      className="w-full bg-white shadow-md rounded-lg overflow-hidden flex flex-col transition-all"
+      className="w-full bg-white shadow-lg rounded-lg overflow-hidden flex flex-col transition-all"
       whileHover={{
         scale: 1.05,
         boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",

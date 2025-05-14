@@ -9,6 +9,7 @@ const CommonLayout = async ({ children }: { children: React.ReactNode }) => {
     <div>
       <Navbar session={session}></Navbar>
       <div className="min-h-screen mt-20">{children}</div>
+
       <Footer />
     </div>
   );

@@ -62,7 +62,7 @@ const ProjectCardMotion = ({ project }: { project: TProject }) => {
           <span className="text-sm text-gray-400">{project?.year}</span>
           <Link href={`/projects/${project._id}`}>
             <motion.button
-              className="bg-orange-500 text-white px-2 py-1 rounded-md  hover:hover:bg-orange-600"
+              className="bg-orange-500 text-white px-4 py-2 rounded-full  hover:hover:bg-orange-600"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >

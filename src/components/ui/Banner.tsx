@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <section className="container mx-auto px-4 py-12 flex flex-col md:flex-row items-center justify-between gap-12 bg-white">
+    <section className="container mx-auto px-4 py-12 flex flex-col md:flex-row items-center gap-12 bg-white">
       {/* Left Side - Text Content */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}

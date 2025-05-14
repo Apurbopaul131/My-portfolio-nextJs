@@ -51,7 +51,7 @@ const ProjectContainer = async () => {
       </div>
       <div className="my-5 flex justify-center">
         <Link href={"/projects"}>
-          <button className="bg-orange-500 flex gap-1 items-center text-white px-3 py-2 rounded-md hover:bg-orange-600 transition">
+          <button className="bg-orange-500 flex gap-1 items-center text-white px-4 py-2 rounded-full hover:bg-orange-600 transition">
             <span>See more</span>
             <FaArrowRight />
           </button>
